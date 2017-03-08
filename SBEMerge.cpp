@@ -126,7 +126,7 @@ STDMETHODIMP CopyMetadata(LPCWSTR wszSource, IStreamBufferRecComp* pRecComp)
                      
                      pbAttribute += (cchDesc) * sizeof(WCHAR);
 
-					 (BYTE*)(pbAttribute - RTL_FIELD_SIZE(WM_PICTURE,pwszDescription)) = pbAttribute;
+					 *(BYTE*)(pbAttribute - RTL_FIELD_SIZE(WM_PICTURE,pwszDescription)) = pbAttribute;
 
                      *(DWORD*)(pbAttribute) = WMPicture->dwDataLen;
                      
